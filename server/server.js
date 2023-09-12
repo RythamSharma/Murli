@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const openai = new OpenAI({apiKey: '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'});
+const openai = new OpenAI({apiKey: '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'});
 
 const password = "Navya#1427";
 const enpassword = encodeURIComponent("Navya#1427");
