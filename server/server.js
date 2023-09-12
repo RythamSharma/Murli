@@ -85,6 +85,8 @@ app.get('/sendmessage',async (req,res)=>{
       console.log("AI request processed");
       
       var letter = completion.choices[0].message.content;
+      console.log(username+":"+msg);
+      console.log(username+":"+letter);
       res.json({letter})
 
 })
