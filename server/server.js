@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser =  require('body-parser');
 const OpenAI = require('openai'); // Import OpenAI modules
 const {MongoClient,ServerApiVersion} = require('mongodb');
+require('dotenv').config();
 
 const app = express();
 
@@ -9,7 +10,7 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const openai = new OpenAI({apiKey: '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'});
+const openai = new OpenAI({apiKey: process.env.OPENAI_API_KEY});
 
 const password = "Navya#1427";
 const enpassword = encodeURIComponent("Navya#1427");
@@ -81,7 +82,7 @@ app.get('/sendmessage',async (req,res)=>{
           },
         ],
       });
-    
+
       console.log("AI request processed");
       
       var letter = completion.choices[0].message.content;
