@@ -1,0 +1,105 @@
+/* Apply this CSS to your LetterForm component */
+
+/* Container for centering content */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f5f5f5; /* Light gray background */
+  }
+  
+  /* Header styling */
+  h1 {
+    font-size: 36px;
+    color: #d6ae41; /* Divine Gold */
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Form container */
+  .form-container {
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff; /* White background */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Form styling */
+  .form-label {
+    font-weight: bold;
+    color: #d6ae41; /* Divine Gold */
+  }
+  
+  .form-control {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  textarea.form-control {
+    resize: vertical;
+  }
+  
+  /* Button styling */
+  .btn-primary {
+    background-color: #d6ae41; /* Divine Gold */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .btn-primary:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  /* LetterDisplay styling */
+  #letter-display {
+    background-color: #fff; /* White background */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  #letter-display h2 {
+    color: #d6ae41; /* Divine Gold */
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  #letter-display p {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  
+  /* Peacock colors (adjust as needed) */
+  .peacock-blue {
+    color: #006a7e; /* Peacock Blue */
+  }
+  
+  .peacock-green {
+    color: #00a99d; /* Peacock Green */
+  }
+  
+  .peacock-purple {
+    color: #694b82; /* Peacock Purple */
+  }
+  
+  .peacock-gold {
+    color: #d6ae41; /* Divine Gold */
+  }
+  
