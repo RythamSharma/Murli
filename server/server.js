@@ -54,6 +54,7 @@ app.get('/sendmessage',async (req,res)=>{
 
     const msg  = req.query.message;
     const username = req.query.username;
+    const lang = req.query.language;
 
     try
     {
@@ -61,12 +62,19 @@ app.get('/sendmessage',async (req,res)=>{
         const db = client.db('murli');
         const col = db.collection("users");
        const user = await col.findOne({username});
+
+       if(user==null)
+       {
+        return res.json({letter:"Username not registered!,Please contact Developer Naman Sharma"});
+       }
+       
        console.log(user);
        var count = user.credits;
        if(count==0)
        {
-        return res.json({letter:"credits expired please buy new plan!"})
+        return res.json({letter:"credits expired please buy new plan!"});
        }
+       
        count--;
        console.log(count)
        await col.updateOne({username},{$set:{credits: count.toString()}});
@@ -83,7 +91,7 @@ app.get('/sendmessage',async (req,res)=>{
         messages: [
           {
             role: 'user',
-            content: `Acting as lord krishna,Give a solution to this problem ${msg} give references on basis of bhagwat geeta incidents,give output in form of a letter,And my name is ${name}`,
+            content: `Acting as lord krishna,Give a solution to this problem ${msg} give references on basis of bhagwat geeta incidents,give output in form of a letter,And my name is ${name},Please reply in simple ${lang} language , do not use hard to understand words`,
           },
         ],
       });
@@ -93,7 +101,8 @@ app.get('/sendmessage',async (req,res)=>{
       var letter = completion.choices[0].message.content;
       console.log(username+":"+msg);
       console.log(username+":"+letter);
-      res.json({letter})
+      if(count!=0)
+      res.json({letter});
 
 })
 

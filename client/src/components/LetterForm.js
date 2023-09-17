@@ -8,6 +8,7 @@ function LetterForm() {
   const [showLetter, setShowLetter] = useState(false);
   const [loading, setLoading] = useState(false);
   const [letter, setLetter] = useState('');
+  const [language, setLanguage] = useState(''); // Add language state
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -15,6 +16,7 @@ function LetterForm() {
     const data = {
       username,
       message,
+      language, // Include the language field in the data
     };
 
     try {
@@ -23,7 +25,7 @@ function LetterForm() {
 
       // Send a GET request to /sendmessage with query parameters
       const queryParams = new URLSearchParams(data).toString();
-      const response = await fetch(`https://murliapi2.onrender.com/sendmessage?${queryParams}`);
+      const response = await fetch(`http://localhost:3003/sendmessage?${queryParams}`);
       const responseJson = await response.json();
 
       if (response.ok) {
@@ -55,6 +57,17 @@ function LetterForm() {
             id="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="language" className="form-label">Language:</label>
+          <input
+            type="text"
+            className="form-control"
+            id="language"
+            value={language}
+            onChange={(e) => setLanguage(e.target.value)}
             required
           />
         </div>
