@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import LetterDisplay from './LetterDisplay';
 import './Styles/LetterForm.css';
+import musicFile from './mahabharat.mp3';
 
 function LetterForm() {
   const [username, setUsername] = useState('');
@@ -8,7 +9,13 @@ function LetterForm() {
   const [showLetter, setShowLetter] = useState(false);
   const [loading, setLoading] = useState(false);
   const [letter, setLetter] = useState('');
-  const [language, setLanguage] = useState(''); // Add language state
+  const [language, setLanguage] = useState('');
+  const [audio, setAudio] = useState(new Audio(musicFile)); // Create an audio state
+
+  const playMusic = () => {
+    // Play music when called
+    audio.play();
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,7 +23,7 @@ function LetterForm() {
     const data = {
       username,
       message,
-      language, // Include the language field in the data
+      language,
     };
 
     try {
@@ -25,7 +32,7 @@ function LetterForm() {
 
       // Send a GET request to /sendmessage with query parameters
       const queryParams = new URLSearchParams(data).toString();
-      const response = await fetch(`http://localhost:3003/sendmessage?${queryParams}`);
+      const response = await fetch(`https://murliapi2.onrender.com/sendmessage?${queryParams}`);
       const responseJson = await response.json();
 
       if (response.ok) {
@@ -34,6 +41,7 @@ function LetterForm() {
 
         setLetter(responseJson.letter);
         setShowLetter(true);
+        playMusic(); // Play music when the "Show Letter" button is clicked
       } else {
         console.error('Failed to send message.');
       }
