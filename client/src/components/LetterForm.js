@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import LetterDisplay from './LetterDisplay';
 import './Styles/LetterForm.css';
 import musicFile from './mahabharat.mp3';
 import murli from './images/murli3.png';
@@ -56,16 +55,16 @@ function LetterForm() {
   return (
     <>
     <div className="header grid justify-items-center">
-      <img className='w-60 mb-11 mt-3' src={murli} alt="murli logo"/>
+      <img className=' w-44 lg:w-60 mb-11 mt-3' src={murli} alt="murli logo"/>
     </div>
     <div className="letter-container  text-white " >
-      <h1 className="letter-heading grid justify-items-center text-white text-4xl ">Letter To Lord Krishna</h1>
-      <form onSubmit={handleSubmit} className='grid justify-center' >
+      <h1 className=" text-3xl letter-heading grid justify-items-center text-white lg:text-4xl ">Letter To Lord Krishna</h1>
+      <form onSubmit={handleSubmit} className=' px-6 grid justify-center' >
         <div className="form-group m-2">
           <label htmlFor="username" className="form-label">Your Name:</label>
           <input
             type="text"
-            className="form-control"
+            className="form-control outline-none "
             id="username"
             style={{border:'none', borderBottom:'1px solid white', background:'none',marginLeft:'10px'}}
             value={username}
@@ -77,7 +76,7 @@ function LetterForm() {
           <label htmlFor="language" className="form-label">Language:</label>
           <input
             type="text"
-            className="form-control"
+            className="form-control outline-none "
             style={{border:'none', borderBottom:'1px solid white', background:'none',marginLeft:'10px'}}
             id="language"
             value={language}
@@ -88,7 +87,7 @@ function LetterForm() {
           <label htmlFor="message" className="form-label mx-3 my-5">Your Message to Lord Krishna :</label>
         <div className="form-group m-2">
           <textarea
-            className="form-control rounded-2xl"
+            className="form-control rounded-2xl outline-none p-2 "
             id="message"
             value={message}
             style={{border:'1px solid white', background:'none',marginLeft:'10px',width:'90vw'}}

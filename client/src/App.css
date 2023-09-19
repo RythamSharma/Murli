@@ -13,9 +13,9 @@ body {
   background-size: cover;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1180px) {
   body {
-    background-image: url('./components/images/bgsm.jpg');
+    background-image: url('./components/images/bgmd.jpg');
   }
 }
 .letter-container{
