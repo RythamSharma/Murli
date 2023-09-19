@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser =  require('body-parser');
-const OpenAI = require('openai'); // Import OpenAI modules
+const OpenAI = require('openai');
 const {MongoClient,ServerApiVersion} = require('mongodb');
 const cors = require('cors');
 require('dotenv').config();
