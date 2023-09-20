@@ -27,7 +27,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #a10f58; /* Set your custom color here */
+  background-color: #0f67a1; /* Set your custom color here */
   border-radius: 5px; /* Rounded corners for the thumb */
 }
 

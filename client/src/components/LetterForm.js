@@ -55,12 +55,12 @@ function LetterForm() {
   return (
     <>
     <div className="header grid justify-items-center">
-      <img className=' w-44 lg:w-60 mb-11 mt-3' src={murli} alt="murli logo"/>
+      <img className=' w-44 lg:w-60  mb-6 md:mb-11 mt-3' src={murli} alt="murli logo"/>
     </div>
     <div className="letter-container  text-white " >
-      <h1 className=" text-3xl letter-heading grid justify-items-center text-white lg:text-4xl ">Letter To Lord Krishna</h1>
+      <h1 className=" text-3xl mb-5 md:mb-0 letter-heading grid justify-items-center text-white lg:text-4xl ">Letter To Lord Krishna</h1>
       <form onSubmit={handleSubmit} className=' px-6 grid justify-center' >
-        <div className="form-group m-2">
+        <div className="form-group m-2 ">
           <label htmlFor="username" className="form-label">Your Name:</label>
           <input
             type="text"
