@@ -1,0 +1,21 @@
+/* Spinner.css */
+
+/* Default styles for larger devices */
+.spinner {
+    position: absolute;
+    top: 65%;
+    left: 42%;
+  }
+  
+  
+  /* Media query for small devices (e.g., screens with a width of 768px or less) */
+  @media (max-width: 768px) {
+    .spinner {
+      /* Adjust the position for small devices */
+      position: absolute;
+      top: 62%; /* Center vertically */
+      left: 16%; /* Center horizontally */
+    
+    }
+  }
+  
